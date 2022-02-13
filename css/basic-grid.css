@@ -1,0 +1,25 @@
+.basic-grid {
+  display: grid;
+  gap: 1rem;
+
+  /* explicity grid */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+
+  /* cleaner code to specify the columns */
+  grid-template-columns: repeat(12, 1fr);
+  
+  /* using minmax */
+  grid-template-columns: repeat(12, minmax(240px, 1fr));
+}
+
+.basic-grid.autofill {
+    /* Implicit grid - let the algorithm figure out cols / rows */
+    /* autofill will create new columns in the grid to fill the available space*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.basic-grid.autofit {
+    /* Implicit grid - let the algorithm figure out cols / rows */
+    /* autofit will expand the existing columns to fit in the available space */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
